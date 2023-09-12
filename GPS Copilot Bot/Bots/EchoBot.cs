@@ -24,8 +24,8 @@ namespace EchoBot.Bots
         UserState _userState;
 
 
-        const string WELCOME_TEXT = " Hello and welcome, I am your AI assistant and I am here to assist you in creating a Partner Development plan. What is your first name?";
-        const string WELCOME_AFTER_INIT_PROMPT_TEXT = "Welcome {0}. This is your playground, a system prompt created by OpenAI that you can modify and fine-tune using the appropriate prompt engineering techniques. The system prompt is stored in Azure Blob Storage and you can easily access and modify it to suit your needs. You can use the Azure Storage explorer to edit the file by providing the following link: {1} ";
+        const string WELCOME_TEXT = " Hello and welcome, I am your AI assistant and I am here to assist you in creating a Partner Business Plan. What is your first name?";
+        const string WELCOME_AFTER_INIT_PROMPT_TEXT = "Welcome {0}. This is your playground where you can modify and fine-tune the behaviour of your bot using prompt engineering techniques. An initial system prompt has been created to help you get started and it is stored in Azure Blob Storage. You can access and modify this prompt to suit your needs using Azure Storage Explorer. Here is the link to the file: {1} ";
         const string READY_TO_PROCEED_TEXT = "Are you ready to proceed?";
         const string RESTART_TEXT = "restart";
 
