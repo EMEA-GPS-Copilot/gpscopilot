@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33927.289
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GPS Copilot Bot", "GPS Copilot Bot\GPS Copilot Bot.csproj", "{68E58972-19F1-4D12-B691-C3D36A7AB06A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GPS Copilot Client", "GPS Copilot Client\GPS Copilot Client.csproj", "{3731369E-D2BF-4558-A851-49ECA80C850D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{68E58972-19F1-4D12-B691-C3D36A7AB06A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68E58972-19F1-4D12-B691-C3D36A7AB06A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68E58972-19F1-4D12-B691-C3D36A7AB06A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68E58972-19F1-4D12-B691-C3D36A7AB06A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3731369E-D2BF-4558-A851-49ECA80C850D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3731369E-D2BF-4558-A851-49ECA80C850D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3731369E-D2BF-4558-A851-49ECA80C850D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3731369E-D2BF-4558-A851-49ECA80C850D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4CC2B7C1-15FF-4E78-A033-46D67C00D58E}
+	EndGlobalSection
+EndGlobal

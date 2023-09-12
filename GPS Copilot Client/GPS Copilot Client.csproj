@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>aspnet-Bot_GPSCopilot_PartnerPlan_Identity-e0dd6c70-85dc-403c-b280-20dd12305f27</UserSecretsId>
+    <WebProject_DirectoryAccessLevelKey>0</WebProject_DirectoryAccessLevelKey>
+    <RootNamespace>Bot_GPSCopilot_PartnerPlan_Identity</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.21" NoWarn="NU1605" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="6.0.21" NoWarn="NU1605" />
+    <PackageReference Include="Microsoft.Identity.Web" Version="1.16.0" />
+    <PackageReference Include="Microsoft.Identity.Web.UI" Version="1.16.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\images\" />
+  </ItemGroup>
+
+</Project>

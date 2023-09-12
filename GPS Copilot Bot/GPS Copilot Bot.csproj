@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Data\SystemInitPrompt_Career.txt" />
+    <None Remove="Data\SystemInitPrompt_PDP.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Data\SystemInitPrompt_PDP.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\SystemInitPrompt_Career.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Azure.AI.OpenAI" Version="1.0.0-beta.7" />
+    <PackageReference Include="Azure.Storage.Blobs" Version="12.18.0-beta.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.1" />
+    <PackageReference Include="Microsoft.Bot.Builder.Integration.AspNet.Core" Version="4.17.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>
