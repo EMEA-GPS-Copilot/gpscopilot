@@ -9,6 +9,6 @@
 
         public bool IsSystemMessageLoaded { get; set; }
 
-        public string Username { get; set; }
+        public string AreaSelected { get; set; }
     }
 }
