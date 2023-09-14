@@ -3,9 +3,11 @@
 //
 // Generated with EchoBot .NET Template version v4.17.1
 
+using Azure;
 using Azure.AI.OpenAI;
 using GPS_Copilot.Models;
 using GPS_Copilot.Services;
+using GPS_Copilot_Bot.Models;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Schema;
 using Microsoft.Extensions.Azure;
@@ -28,7 +30,10 @@ namespace EchoBot.Bots
         const string WELCOME_AFTER_INIT_PROMPT_TEXT = "Welcome, i will be your guide on {0}. This is your playground where you can modify and fine-tune the behaviour of your bot using prompt engineering techniques. An initial system prompt has been created to help you get started and it is stored in Azure Blob Storage. You can access and modify this prompt to suit your needs using Azure Storage Explorer. Here is the link to the file: {1}.";
         const string READY_TO_PROCEED_TEXT = "Are you ready to proceed?";
         const string RESTART_TEXT = "restart";
-
+        const string PBP = "Partner Business Plan";
+        const string SPECIALIZATIONS = "Specializations";
+        const string DESIGNATIONS = "Designations";
+        const string QUESTIONS = "General Questions";
 
         public EchoBot(ConversationState conversationState, UserState userState)
         {
@@ -95,13 +100,25 @@ namespace EchoBot.Bots
             }
             else
             {
-                conversationMessage.MessageList.Add(new Message()
+                if (string.Compare(contextHelper.AreaSelected, QUESTIONS, true) == 0)
                 {
-                    Text = turnContext.Activity.Text,
-                    Role = Role.User
-                });
+                    Search search = new Search("gpscopilot-20230913114331-8a0d-index-chunk");
+                    string response = search.CallSearch(turnContext.Activity.Text);
 
-                responseMessage = oAI.CallOpenAI(conversationMessage);
+                    responseMessage = oAI.CallOpenAI(conversationMessage, $"{turnContext.Activity.Text} from the following data\n---\n{response},\n---");
+                }
+                else
+                {
+                    conversationMessage.MessageList.Add(new Message()
+                    {
+                        Text = turnContext.Activity.Text,
+                        Role = Role.User
+                    });
+
+                    responseMessage = oAI.CallOpenAI(conversationMessage);
+                }
+
+                
 
                 conversationMessage.MessageList.Add(new Message()
                 {
@@ -143,10 +160,10 @@ namespace EchoBot.Bots
             {
                 Actions = new List<CardAction>()
                 {
-                    new CardAction() { Title = "Partner Business Plan", Type = ActionTypes.ImBack, Value = "Partner Business Plan"},
-                    new CardAction() { Title = "Specializations", Type = ActionTypes.ImBack, Value = "Specializations"},
-                    new CardAction() { Title = "Designations", Type = ActionTypes.ImBack, Value = "Designations" },
-                    new CardAction() { Title = "General Questions", Type = ActionTypes.ImBack, Value = "General Questions" },
+                    new CardAction() { Title = PBP, Type = ActionTypes.ImBack, Value = PBP},
+                    new CardAction() { Title = SPECIALIZATIONS, Type = ActionTypes.ImBack, Value = SPECIALIZATIONS},
+                    new CardAction() { Title = DESIGNATIONS, Type = ActionTypes.ImBack, Value = DESIGNATIONS },
+                    new CardAction() { Title = QUESTIONS, Type = ActionTypes.ImBack, Value = QUESTIONS },
                 },
             };
             await turnContext.SendActivityAsync(reply, cancellationToken);
